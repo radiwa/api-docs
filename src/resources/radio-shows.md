@@ -63,7 +63,7 @@ Content-Type: application/json
 
 ##### by-week
 
-Returns shows appeared in week with specific date. Work with a numbers of week and with dates.
+Returns entities appeared in week with certain date. Works with week numbers and dates.
 
 with numbers of week:
 
@@ -142,9 +142,9 @@ Content-Type: application/json
 
 #### Request
 
-Creates new shows
+Create new show.
 
-Access Restriction: Only for admin and RJ's
+Access Restrictions: Only for admin and RJ's
 
 ```bash
 curl https://radiwa.host/api/v1/radio-shows \
@@ -191,7 +191,7 @@ Content-Type: application/json
 
 #### Request
 
-Creates new shows
+Update a show
 
 Access Restriction: Only for admin and author.
 
@@ -238,7 +238,7 @@ Content-Type: application/json
 
 ### [DELETE] /radio-shows/{:id}
 
-Destroy radio show.
+Destroy a show
 
 #### Request
 

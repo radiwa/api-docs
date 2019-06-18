@@ -4,29 +4,29 @@
 
 Default encoding - UTF-8.
 
-DateTime written in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) in UTC.
+DateTime must be in [ISO8601](https://en.wikipedia.org/wiki/ISO_8601).
 
-API based on [JSON:API](https://jsonapi.org/), but has some specific differences: for `Content-Type` can be used `application/json`.
+API based on [JSON:API](https://jsonapi.org/), but it has some specific differences: for `Content-Type` can be used `application/json`.
 
 ## Read and Write Access
 
 Access type by roles
 
 Access type | Description
--------------------------
+----------- | -----------
 all         | can access all users and users without authorization
 users       | can access only authorized users
 rj          | can access users with role `RJ` and `admin`
 admin       | can access users with role `admin` 
 
-### Example of `Include`
+### Example of `include`
 
-Include returns entity with relations
+You can include relations in request:
 
 ```bash
 curl https://radiwa.host/api/v1/radio-shows?include=rj \
   -X GET
-  -H Content-Type: application/json
+  -H "Content-Type: application/json"
 ```
 
 ```

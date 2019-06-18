@@ -54,10 +54,10 @@ Returns attributes for one specific user
 
 #### Request
 
-```
+```bash
 curl https://radiwa.host/api/v1/users/1 \
   -X GET
-  -H Content-Type: application/json
+  -H "Content-Type: application/json"
 ```
 
 #### Response
@@ -82,10 +82,11 @@ Content-Type: application/json
 Creates new user
 
 #### Request
-```
+
+```bash
 curl https://radiwa.host/api/v1/users \
   -X POST
-  -H Content-Type: application/json
+  -H "Content-Type: application/json"
   -d @- << EOF
     {
        "data":{
@@ -98,7 +99,9 @@ curl https://radiwa.host/api/v1/users \
     }
 EOF
 ```
+
 #### Response
+
 ```
 Status: 201 OK
 Content-Type: application/json
@@ -116,13 +119,14 @@ Content-Type: application/json
 
 ### [POST] /users/{:id}
 
-Authorize users
+Get access_token for user
 
 #### Request
-```
+
+```bash
 curl https://radiwa.host/api/v1/users \
   -X POST
-  -H Content-Type: application/json
+  -H "Content-Type: application/json"
   -d @- << EOF
     {
        "data":{
@@ -137,6 +141,7 @@ EOF
 ```
 
 #### Response
+
 ```
 Status: 200 OK
 Content-Type: application/json
@@ -161,11 +166,12 @@ Access Restriction: Only for yourself.
 **NOTE:** Changing password revoke all old tokens
 
 #### Request
-```
+
+```bash
 curl https://radiwa.host/api/v1/users/2 \
   -X POST
-  -H Content-Type: application/json
-  -H Authorization: Bearer AccessTokenForSomeUser
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer AccessTokenForSomeUser"
   -d @- << EOF
     {
        "data":{
@@ -181,6 +187,7 @@ EOF
 ```
 
 ### Response
+
 ```
 Status: 200 OK
 Content-Type: application/json
@@ -202,10 +209,10 @@ Destroy user.
 
 #### Request
 
-```
+```bash
 curl https://radiwa.host/api/v1/users/2 \
   -X DELETE
-  -H Content-Type: application/json
-  -H Authorization: Bearer AccessTokenForSomeUser
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer AccessTokenForSomeUser"
 EOF
 ```
